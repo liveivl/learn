@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>太极生两仪</title>
+	<meta charset="utf-8" lang = "zh-cn" />
+</head>
+<body>
+	<canvas width="800" height="1600" id="myCanvas" style="border:1px solid #000000" >
+		
+	</canvas>
+	<script type="text/javascript">
+		var circle = document.getElementById('myCanvas');
+		var context = circle.getContext("2d");
+		//半圆 填充型
+		function drawHelfArc(pointx, pointy, redius, mathPix, mathPiy, bound){
+			context.beginPath();
+			context.arc(pointx, pointy, redius, mathPix, mathPiy, true);
+			if (bound) {
+				context.fillStyle = bound;
+				context.fill();
+
+			}
+			context.stroke();
+		}
+		drawHelfArc(400, 400, 200, Math.PI/2, Math.PI*3/2, "#000000");
+		drawHelfArc(400, 300, 100, Math.PI/2, Math.PI*3/2, "#ffffff");
+		drawHelfArc(400, 500, 100, Math.PI*3/2, Math.PI*5/2, "#000000");
+		drawHelfArc(400,300,25,0,Math.PI*2,"#0000000");
+		drawHelfArc(400,500,25,0,Math.PI*2,"#ffffff");
+		//整圆 描边型
+		function drawAllArc(redius){
+		context.beginPath();
+		context.arc(400,400,redius,0,Math.PI*2,true);
+		context.strokeStyle = "#000000";
+		context.stroke();
+		}
+		drawAllArc(200);
+		//drawAllArc(300);
+		//线条
+		function drawLine(patha,pathb,pathc,pathd){
+		context.beginPath();
+		context.moveTo(patha,pathb);
+		context.lineTo(pathc,pathd);
+		context.strokeStyle = "#000000";
+		context.stroke();
+		}
+		//乾
+		drawLine(380,180,420,180);
+		drawLine(380,165,420,165);
+		drawLine(380,150,420,150);
+		//坤
+		drawLine(380,620,396,620);
+		drawLine(404,620,420,620);
+		drawLine(380,635,396,635);
+		drawLine(404,635,420,635);
+		drawLine(380,650,396,650);
+		drawLine(404,650,420,650);
+		//离
+		drawLine(180,380,180,420);
+		drawLine(165,380,165,396);
+		drawLine(165,404,165,420);
+		drawLine(150,380,150,420);
+		//坎
+		drawLine(620,380,620,396);
+		drawLine(620,404,620,420);
+		drawLine(635,380,635,420);
+		drawLine(650,380,650,396);
+		drawLine(650,404,650,420);
+		//兑
+		drawLine(400-120*Math.sqrt(2),400-100*Math.sqrt(2),400-100*Math.sqrt(2),400-120*Math.sqrt(2));
+		drawLine(400-127.5*Math.sqrt(2),400-107.5*Math.sqrt(2),400-107.5*Math.sqrt(2),400-127.5*Math.sqrt(2));
+		drawLine(400-135*Math.sqrt(2),400-115*Math.sqrt(2),400-127*Math.sqrt(2),400-123*Math.sqrt(2));
+		drawLine(400-123*Math.sqrt(2),400-127*Math.sqrt(2),400-115*Math.sqrt(2),400-135*Math.sqrt(2));
+		//艮
+		drawLine(400+100*Math.sqrt(2),400+120*Math.sqrt(2),400+108*Math.sqrt(2),400+112*Math.sqrt(2));
+		drawLine(400+112*Math.sqrt(2),400+108*Math.sqrt(2),400+120*Math.sqrt(2),400+100*Math.sqrt(2));
+		drawLine(400+107.5*Math.sqrt(2),400+127.5*Math.sqrt(2),400+115.5*Math.sqrt(2),400+119.5*Math.sqrt(2));
+		drawLine(400+119.5*Math.sqrt(2),400+115.5*Math.sqrt(2),400+127.5*Math.sqrt(2),400+107.5*Math.sqrt(2));
+		drawLine(400+115*Math.sqrt(2),400+135*Math.sqrt(2),400+135*Math.sqrt(2),400+115*Math.sqrt(2));
+		//震
+		drawLine(400-100*Math.sqrt(2),400+120*Math.sqrt(2),400-120*Math.sqrt(2),400+100*Math.sqrt(2));
+		drawLine(400-107.5*Math.sqrt(2),400+127.5*Math.sqrt(2),400-115.5*Math.sqrt(2),400+119.5*Math.sqrt(2));
+		drawLine(400-127.5*Math.sqrt(2),400+107.5*Math.sqrt(2),400-119.5*Math.sqrt(2),400+115.5*Math.sqrt(2));
+		drawLine(400-115*Math.sqrt(2),400+135*Math.sqrt(2),400-123*Math.sqrt(2),400+127*Math.sqrt(2));
+		drawLine(400-135*Math.sqrt(2),400+115*Math.sqrt(2),400-127*Math.sqrt(2),400+123*Math.sqrt(2));
+		//巽
+		drawLine(400+120*Math.sqrt(2),400-100*Math.sqrt(2),400+112*Math.sqrt(2),400-108*Math.sqrt(2));
+		drawLine(400+100*Math.sqrt(2),400-120*Math.sqrt(2),400+108*Math.sqrt(2),400-112*Math.sqrt(2));
+		drawLine(400+127.5*Math.sqrt(2),400-107.5*Math.sqrt(2),400+107.5*Math.sqrt(2),400-127.5*Math.sqrt(2));
+		drawLine(400+135*Math.sqrt(2),400-115*Math.sqrt(2),400+115*Math.sqrt(2),400-135*Math.sqrt(2));
+
+
+
+
+		/*context.beginPath();
+		context.arc(400,400,200,0,Math.PI*2);
+		context.strokeStyle = "#000000";
+		context.stroke();*/
+
+	</script>
+</body>
+</html>
